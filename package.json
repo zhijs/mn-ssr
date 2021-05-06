@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/zhijs/mn-ssr.git"
+    "url": "git+https://git.woa.com/mn-ssr/mn-ssr.git"
   },
   "keywords": [
     "react",
@@ -17,7 +17,7 @@
   "author": "zhijs",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/zhijs/mn-ssr/issues"
+    "url": "https://git.woa.com/mn-ssr/issues"
   },
-  "homepage": "https://github.com/zhijs/mn-ssr#readme"
+  "homepage": "https://git.woa.com/mn-ssr/mn-ssr#readme"
 }
