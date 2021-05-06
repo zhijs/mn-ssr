@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://git.woa.com/mn-ssr/issues"
   },
-  "homepage": "https://git.woa.com/mn-ssr/mn-ssr#readme"
+  "homepage": "https://git.woa.com/mn-ssr/mn-ssr#readme",
+  "dependencies": {
+    "jsdom": "^16.5.3"
+  }
 }

@@ -5,7 +5,12 @@
  */
 
 export default {
-  fetch () {
+  /**
+   * 
+   * @param {Object} param.req 请求部分信息
+   * @param {function} param.redirect 重定向跳转，用于请求出错时做重定向其他页面操作
+   */
+  fetch ({ req, redirect }) {
     return new Promise((resolve, reject) => {
       setTimeout(() => {
         resolve({
