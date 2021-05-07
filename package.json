@@ -17,9 +17,9 @@
   "author": "zhijs",
   "license": "MIT",
   "bugs": {
-    "url": "https://git.woa.com/mn-ssr/issues"
+    "url": "https://github.com/zhijs/mn-ssr/issues"
   },
-  "homepage": "https://git.woa.com/mn-ssr/mn-ssr#readme",
+  "homepage": "https://github.com/zhijs/mn-ssr#readme",
   "dependencies": {
     "jsdom": "^16.5.3",
     "react": "^17.0.2",
