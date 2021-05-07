@@ -3,6 +3,7 @@
  */
 
  const generatorTags = (document) => {
+    const head =  document.getElementsByTagName('head')[0]
     return {
       tittle: (tittle) => {
         document.tittle = tittle  
@@ -15,7 +16,7 @@
           const keywordTag = document.createElement('meta');
           keywordTag.name = 'keywords'
           keywordTag.setAttribute('content', keywords)
-          document.getElementsByTagName('head')[0].appendChild(keywordTag);
+          head.appendChild(keywordTag);
         }
       },
       description: (description) => {
@@ -26,8 +27,41 @@
           const desTag = document.createElement('meta');
           desTag.name = 'description'
           desTag.setAttribute('content', description)
-          document.getElementsByTagName('head')[0].appendChild(desTag);
+          head.appendChild(desTag);
+        }
+      },
+      link: (links) => {
+        const fragment = document.createDocumentFragment();
+        for(let i = 0; i < links.length; i++) {
+          const link = document.createElement('link')
+          Object.keys(links[i]).map((key) => {
+            link.setAttribute(key, link[i][key])  
+          })
+          fragment.appendChild(link)
+        }
+        links && links。length && head.appendChild(fragment)
+      },
+      script: (scripts) => {
+        const fragment = document.createDocumentFragment();
+        for(let i = 0; i < scripts.length; i++) {
+          const script = document.createElement('script')
+          if (scripts[i].type === 'application/ld+json') {
+            script.setAttribute(type, scripts[i].type)
+            script.innerText = scripts[i].json
+          } else {
+            Object.keys(scripts[i]).map((key) => {
+              if (key === 'innerHTML'){
+                script.innerHTML = scripts[i][key]
+              } else {
+                script.setAttribute(key, scripts[i][key]) 
+              }
+               
+            })
+          }
+          fragment.appendChild(script)
         }
       }
+
     }  
  }
+ export default generatorTags

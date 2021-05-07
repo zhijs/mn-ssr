@@ -18,7 +18,7 @@ export default {
           keyword: 'react, ssr, javascript',
           description: ''
         }) 
-      })   
+      }， 1000)   
     })
   },
 

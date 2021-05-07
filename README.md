@@ -15,6 +15,5 @@ npm run build:server # 至编译 SSR 代码
 
 ```
 
-
 ### 参考技术文档
 [从零开始 react 服务端渲染](http://www.alloyteam.com/2017/01/react-from-scratch-server-render/)
