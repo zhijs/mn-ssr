@@ -5,11 +5,11 @@
  const generatorTags = (document) => {
     const head =  document.getElementsByTagName('head')[0]
     return {
-      tittle: (tittle) => {
-        document.tittle = tittle  
+      title: (title) => {
+        document.title = title  
       },
-      keywords: (keywords) => {
-        keywordDom = document.querySelector("meta[name=keywords]");
+      keyword: (keywords) => {
+        let keywordDom = document.querySelector("meta[name=keywords]");
         if (keywordDom) { // 修改内容
           keywordDom.setAttribute('content', keywords)
         } else {
@@ -20,7 +20,7 @@
         }
       },
       description: (description) => {
-        desDom = document.querySelector("meta[name=description]");
+        let desDom = document.querySelector("meta[name=description]");
         if (desDom) { // 修改内容
           desDom.setAttribute('content', description)
         } else {
@@ -35,19 +35,19 @@
         for(let i = 0; i < links.length; i++) {
           const link = document.createElement('link')
           Object.keys(links[i]).map((key) => {
-            link.setAttribute(key, link[i][key])  
+            link.setAttribute(key, links[i][key])  
           })
           fragment.appendChild(link)
         }
-        links && links。length && head.appendChild(fragment)
+        links && links.length && head.appendChild(fragment)
       },
       script: (scripts) => {
         const fragment = document.createDocumentFragment();
         for(let i = 0; i < scripts.length; i++) {
           const script = document.createElement('script')
           if (scripts[i].type === 'application/ld+json') {
-            script.setAttribute(type, scripts[i].type)
-            script.innerText = scripts[i].json
+            script.setAttribute('type', scripts[i].type)
+            script.innerText = JSON.stringify(scripts[i].json)
           } else {
             Object.keys(scripts[i]).map((key) => {
               if (key === 'innerHTML'){
@@ -60,6 +60,7 @@
           }
           fragment.appendChild(script)
         }
+        head.appendChild(fragment)
       }
 
     }  

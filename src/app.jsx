@@ -1,9 +1,10 @@
 
+import React from 'react'; 
+
 
 /**
  * 使用方式
  */
-
 export default {
   /**
    * 
@@ -16,9 +17,9 @@ export default {
         resolve({
           title: 'mm-ssr',
           keyword: 'react, ssr, javascript',
-          description: ''
+          description: 'react ssr'
         }) 
-      }， 1000)   
+      }, 1000)   
     })
   },
 
@@ -42,13 +43,15 @@ export default {
         }
       ]
     }
-  }
+  },
 
   render (state) {
-    return <div>
-      <h1>{ state.title }</h1>
-      <h2> {state.description }</h2>
-      <h2> { state.keyword } </h2>
-    </div>
+    return () => {
+      return (<div>
+        <h1>{ state.title }</h1>
+        <h2> {state.description }</h2>
+        <h2> { state.keyword } </h2>
+      </div>)
+    }
   } 
 }

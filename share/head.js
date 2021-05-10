@@ -11,8 +11,10 @@ import generatorTags from './tags'
  */
  
  const generatorHead = (document, headsObj) => {
+   const generatorHeadFnMap = generatorTags(document)
    return Object.keys(headsObj).forEach((tag) => {
-     generatorTags(document)[tag](headsObj[tag])    
+     console.log('tag', tag)
+     generatorHeadFnMap[tag](headsObj[tag])    
    })
  }
 
